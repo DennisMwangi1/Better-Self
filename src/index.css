@@ -1,10 +1,15 @@
 body {
   margin: 0;
+  background-image: url("https://images.unsplash.com/photo-1497864149936-d3163f0c0f4b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2ltcGxlJTIwYmFja2dyb3VuZHxlbnwwfDB8MHx8&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -13,17 +18,13 @@ code {
 }
 
 .app{
-  background-color: rgba(224, 223, 223, 0.338);
    width: 55%;
     margin: 0 auto;
   }
-   .navSection{
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
+   .navbar{
+    background-color: rgba(224, 223, 223, 0.338);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
    }
    .headerLight{
     margin-bottom: 0%;
@@ -60,8 +61,8 @@ code {
    }
   
    .userIcon>img{
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 70px;
    }
    .ToDoList{
@@ -70,8 +71,8 @@ code {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    /* border-top-left-radius: 80px; */
-    /* border-bottom-right-radius: 80px; */
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
     background-color: #f5f5f5;
     margin-bottom: 30px;
     text-align: center;
@@ -113,6 +114,78 @@ code {
     padding: 5px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     
+   }
+
+   .journal{
+    margin-top: 0%;
+    background-image:url('https://images.unsplash.com/photo-1510935813936-763eb6fbc613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fHNpbXBsZSUyMGJhY2tncm91bmR8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    
+   }
+
+   .profile{
+    margin-top: 5%;
+    background-image:url("https://images.unsplash.com/photo-1507123948929-86a949bdaa23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGpvdXJuYWwlMjBiYWNrZ3JvdW5kfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-top-left-radius: 80px;
+    border-bottom-right-radius: 80px;
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    
+   }
+  
+   .profileForm{
+    background-color: rgba(228, 224, 224, 0.34);
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+   }
+
+   .profileForm>input,textarea{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 20px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+   }
+.formSub{
+    color: black;
+    background-color: rgba(84, 129, 169, 0.737);
+    border: none;
+    font-size: 15px;
+    padding: 9.5px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+   }
+   .formSub:hover{
+    background-color: rgb(48, 97, 140);
+    color: white;
+    cursor: pointer;
    }
   
