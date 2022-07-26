@@ -1,25 +1,33 @@
 import logo from '../logo.svg';
 import '../App.css';
+import Header from './Header';
+import React,{useState} from 'react';
+import ToDoList from './ToDoList';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import NavBar from './Navbar';
+
 
 function App() {
+
+  const[isClicked,setIsClicked]=useState(true)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='app'>
+     
+      <Header isClicked={isClicked} setIsClicked={setIsClicked}/>
+     <BrowserRouter>
+      <NavBar />
+     <Routes>
+      {/* <NavSection/> */}
+      <Route path='/' element={<ToDoList/>}/>
+      {/* <Route  path ="/" element={<Header isClicked={isClicked} setIsClicked={setIsClicked}/>}/> */}
+      {/* <Route path="*"  element={<h1 style={{"backgroundColor":"aliceblue"}}>Page not Found</h1>}/> */}
+      </Routes>
+    </BrowserRouter>
+   </div>
   );
 }
 
 export default App;
+
+
+

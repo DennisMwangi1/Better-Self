@@ -1,5 +1,5 @@
 import React from "react";
-import icon from "../images/toastIcon.jpg"
+import icon from "./images/toastIcon.jpg"
 
 function UserInfo({isClicked}){
     return(
