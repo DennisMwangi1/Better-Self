@@ -11,3 +11,108 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app{
+  background-color: rgba(224, 223, 223, 0.338);
+   width: 55%;
+    margin: 0 auto;
+  }
+   .navSection{
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+   }
+   .headerLight{
+    margin-bottom: 0%;
+    padding: 20px;
+    background-image:url(./images/morning.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   }
+   .headerDark{
+    padding: 20px;
+    background-image:url(./images/night.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+   }
+   .userInfo{
+    margin-top: 100px;
+    background-color: rgba(231, 233, 233, 0.493);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 40px;
+  
+   }
+   .userInfoDark{
+    margin-top: 100px;
+    background-color: rgba(30, 148, 148, 0.493);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 40px;
+  
+   }
+  
+   .userIcon>img{
+    width: 150px;
+    height: 150px;
+    border-radius: 70px;
+   }
+   .ToDoList{
+    margin-top: 0%;
+    background-image:url(./images/todobg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* border-top-left-radius: 80px; */
+    /* border-bottom-right-radius: 80px; */
+    background-color: #f5f5f5;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+   }
+   .ToDoList>h1{
+    padding-top: 10px;
+   }
+   .ToDoList>input{
+    background-color: rgba(237, 244, 250, 0.897);
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    font-size: 15px;
+    padding: 10px;
+    margin: 20px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+   }
+   .ToDoList>button{
+    color: black;
+    background-color: rgba(84, 129, 169, 0.737);
+    border: none;
+    font-size: 15px;
+    padding: 9.5px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+   }
+   .ToDoList>button:hover{
+    background-color: rgb(48, 97, 140);
+    color: white;
+    cursor: pointer;
+   }
+   .todos{
+    background-color: rgba(209, 205, 205, 0.603);
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    
+   }
+  
