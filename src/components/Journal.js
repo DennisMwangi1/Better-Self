@@ -1,6 +1,14 @@
 import React from "react";
 
-function Journal(){
+function Journal({user}){
+    
+    const userName =()=>{
+        if(user === ''){
+            return false
+        }else{
+            return user.firstName
+        }
+    }
 
     const modeStyle={
         border:'none',
@@ -9,7 +17,7 @@ function Journal(){
     }
     return (
         <div className="journal">
-        <h1 style={{'fontFamily':'cursive'}}>My Journal</h1>
+        <h1 style={{'fontFamily':'cursive'}}>{userName()}'s  Journal</h1>
         <textarea type='textarea' placeholder="Journal away....." />
         <button style={modeStyle}><span style={{"fontSize":"30px"}}>&#9993;</span></button>
         <div className="todos">

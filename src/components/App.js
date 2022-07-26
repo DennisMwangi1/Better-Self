@@ -48,9 +48,9 @@ function App() {
       <NavBar />
      <Routes>
 
-      <Route path='/todo' element={<ToDoList/>}/>
+      <Route path='/todo' element={<ToDoList user={user}/>}/>
 
-      <Route path='/journal' element={<Journal/>}/>
+      <Route path='/journal' element={<Journal user={user}/>}/>
 
       <Route path='/' element={<Profile
       handleFirstName={handleFirstName}
