@@ -5,9 +5,14 @@ import React,{useState} from 'react';
 import ToDoList from './ToDoList';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './Navbar';
+import Journal from './Journal';
+import Profile from './Profile';
 
 
 function App() {
+ const[isLoggedIn,setIsLoggedIn]=useState(false)
+ 
+
 
   const[isClicked,setIsClicked]=useState(true)
   return (
@@ -18,9 +23,10 @@ function App() {
       <NavBar />
      <Routes>
       {/* <NavSection/> */}
-      <Route path='/' element={<ToDoList/>}/>
-      {/* <Route  path ="/" element={<Header isClicked={isClicked} setIsClicked={setIsClicked}/>}/> */}
-      {/* <Route path="*"  element={<h1 style={{"backgroundColor":"aliceblue"}}>Page not Found</h1>}/> */}
+      <Route path='/todo' element={<ToDoList/>}/>
+      <Route path='/journal' element={<Journal/>}/>
+      <Route path='/' element={<Profile/>}/>
+      <Route path="*"  element={<h1 style={{"backgroundColor":"aliceblue"}}>Page not Found</h1>}/>
       </Routes>
     </BrowserRouter>
    </div>
