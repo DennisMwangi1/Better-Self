@@ -1,15 +1,16 @@
 import React from "react";
 import ToDo from "./ToDo";
 
-function ToDoList({user}){
+function ToDoList({user,ToDoItem,handleToDos,ToDos,handleDeleteToDo}){
+
 return(
     <div className="ToDoList">
         <h1 style={{'fontFamily':'cursive'}}>{user.firstName}'s TODO's</h1>
-        <input type='textarea' placeholder="Add a ToDo....." />
-        <button>Add</button>
+        <input onChange={ToDoItem} type='textarea' placeholder="Add a ToDo....." />
+        <button onClick={handleToDos}>Add</button>
         <div className="todos">
         <ul>
-           <ToDo />
+           {ToDos.map((Todo,index)=><ToDo key={index} Todo={Todo}/>)}
         </ul>
         </div>
     </div>
