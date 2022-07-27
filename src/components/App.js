@@ -45,7 +45,7 @@ function App() {
      
       <Header isClicked={isClicked} setIsClicked={setIsClicked} user={user} isLoggedIn={isLoggedIn}/>
      <BrowserRouter>
-      <NavBar />
+      <NavBar isLoggedIn={isLoggedIn} />
      <Routes>
 
       <Route path='/todo' element={<ToDoList user={user}/>}/>

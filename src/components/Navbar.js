@@ -1,5 +1,6 @@
-import React from "react"
+import React,{useEffect} from "react"
 import { NavLink } from "react-router-dom";
+import {Navigate} from 'react-router-dom'
 
 const linkStyles ={
     display: "inline-block",
@@ -15,12 +16,16 @@ const linkStyles ={
     
   }
   
-  function NavBar(){
+  function NavBar({isLoggedIn}){
+    
     return(
     <div className='navbar'>
-      <NavLink to='/todo' exact="true" style={linkStyles}>ToDo</NavLink>
-      <NavLink to='/journal' exact ='true' style={linkStyles} >MyJournal</NavLink>
-      <NavLink to='/'  style={linkStyles} >Profile</NavLink>
+      {isLoggedIn?<NavLink to='/todo' exact="true" style={linkStyles}>ToDo</NavLink>:''}
+      {isLoggedIn?<NavLink to='/journal' exact ='true' style={linkStyles} >MyJournal</NavLink>:''}
+      {isLoggedIn?'':<NavLink  to='/'  style={linkStyles} >Profile</NavLink>}
+    
+      
+      
   
     </div>
     )
