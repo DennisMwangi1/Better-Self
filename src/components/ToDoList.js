@@ -10,7 +10,7 @@ return(
         <button onClick={handleToDos}>Add</button>
         <div className="todos">
         <ul>
-           {ToDos.map((Todo,index)=><ToDo key={index} Todo={Todo}/>)}
+           {ToDos.map((Todo,index)=><ToDo key={index} Todo={Todo} handleDeleteToDo={handleDeleteToDo}/>)}
         </ul>
         </div>
     </div>

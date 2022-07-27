@@ -1,14 +1,14 @@
 import React from "react";
 
-function ToDo({Todo}){
+function ToDo({Todo,handleDeleteToDo}){
 
-    fetch()
+    
 
     return(
         <div className="todo">
             <span>&#10146; </span>
             <h3>{Todo.title}</h3>
-            <button value={Todo.id}>Remove</button>
+            <button onClick={handleDeleteToDo} value={Todo.id}>Remove</button>
         </div>
     )
 }

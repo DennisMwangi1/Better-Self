@@ -18,6 +18,7 @@ function App() {
  const[user,setUser]=useState({})
  const[ToDo,setToDo]=useState('')
  const[ToDos,setAddToDos]=useState([])
+//  const[DisplayToDos,setDisplayToDos] = useState(Todo)
 
  useEffect(()=>{
   fetch('http://localhost:3000/todos')
@@ -51,6 +52,7 @@ function App() {
  }
  setUser(userData)
  setIsLoggedIn(true)
+ 
  }
  function ToDoItem(e){
   setToDo(e.target.value)
@@ -66,13 +68,19 @@ function App() {
     body:JSON.stringify(newToDo)
   })
   setAddToDos([...ToDos,newToDo])
-  console.log(ToDos)
  }
 
  function handleDeleteToDo(e){
-  console.log(e.target.value)
+  fetch(`http://localhost:3000/todos/${e.target.value}`,{
+    method:"DELETE"
+  })
+  .then((res)=>res.json())
+  .then()
+
+  e.target.parentNode.remove()
  }
- 
+
+
   return (
     <div className='app'>
      
