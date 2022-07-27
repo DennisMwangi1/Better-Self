@@ -1,7 +1,7 @@
 import logo from '../logo.svg';
 import '../App.css';
 import Header from './Header';
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import ToDoList from './ToDoList';
 import { BrowserRouter, Route, Routes,Navigate } from 'react-router-dom';
 import NavBar from './Navbar';
@@ -10,20 +10,34 @@ import Profile from './Profile';
 
 
 function App() {
- 
  const[isLoggedIn,setIsLoggedIn]=useState(false)
+ const[isClicked,setIsClicked]=useState(true)
  const[userFirstName,setUserFirstName]=useState('')
  const[userLastName,setUserLastName]= useState('')
  const[userBio,setUserBio]=useState('')
  const[user,setUser]=useState({})
+ const[ToDo,setToDo]=useState('')
+ const[ToDos,setAddToDos]=useState([])
+
+ useEffect(()=>{
+  fetch('http://localhost:3000/todos')
+  .then((res)=>res.json())
+  .then((items)=>{
+    setAddToDos(items)
+    
+  })
+ },[])
+//  console.log(ToDos)
 
 
  function handleFirstName(e){
   setUserFirstName(e.target.value)
  }
+
  function handleLastName(e){
   setUserLastName(e.target.value)
  }
+
  function handleBio(e){
   setUserBio(e.target.value)
  }
@@ -37,12 +51,28 @@ function App() {
  }
  setUser(userData)
  setIsLoggedIn(true)
- 
- 
- 
+ }
+ function ToDoItem(e){
+  setToDo(e.target.value)
+ }
+ function handleToDos(e){
+  // console.log('hello')
+  const newToDo = {
+    title:ToDo
+  }
+  fetch('http://localhost:3000/todos',{
+    method:"POST",
+    headers:{"content-Type":"application/json"},
+    body:JSON.stringify(newToDo)
+  })
+  setAddToDos([...ToDos,newToDo])
+  console.log(ToDos)
+ }
+
+ function handleDeleteToDo(e){
+  console.log(e.target.value)
  }
  
-  const[isClicked,setIsClicked]=useState(true)
   return (
     <div className='app'>
      
@@ -51,7 +81,13 @@ function App() {
       <NavBar isLoggedIn={isLoggedIn} />
      <Routes>
 
-      <Route path='/todo' element={<ToDoList user={user}/>}/>
+      <Route path='/todo' element={<ToDoList
+       user={user}
+       ToDoItem={ToDoItem}
+       handleToDos={handleToDos}
+       ToDos={ToDos}
+       handleDeleteToDo={handleDeleteToDo}
+       />}/>
 
       <Route path='/journal' element={<Journal user={user}/>}/>
 
