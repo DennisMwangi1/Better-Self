@@ -188,4 +188,29 @@ code {
     color: white;
     cursor: pointer;
    }
+
+   .todo{
+    background-color: rgba(209, 205, 205, 0.603);
+    width: 70%;
+    margin: 0 auto;
+    padding: 1px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+   }
+   
+   .todo>h3{
+    display: inline-block;
+    padding-right: 40px;
+   }
+   .todo>button{
+    padding: 5px;
+    border: none;
+    background-color: rgba(84, 129, 169, 0.737);
+    color: white;
+    border-radius: 20px;
+    font-size: 15px;
+   }
   

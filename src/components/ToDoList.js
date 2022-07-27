@@ -1,4 +1,5 @@
 import React from "react";
+import ToDo from "./ToDo";
 
 function ToDoList({user}){
 return(
@@ -8,7 +9,7 @@ return(
         <button>Add</button>
         <div className="todos">
         <ul>
-           
+           <ToDo />
         </ul>
         </div>
     </div>

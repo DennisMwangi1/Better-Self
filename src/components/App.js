@@ -3,13 +3,14 @@ import '../App.css';
 import Header from './Header';
 import React,{useState} from 'react';
 import ToDoList from './ToDoList';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes,Navigate } from 'react-router-dom';
 import NavBar from './Navbar';
 import Journal from './Journal';
 import Profile from './Profile';
 
 
 function App() {
+ 
  const[isLoggedIn,setIsLoggedIn]=useState(false)
  const[userFirstName,setUserFirstName]=useState('')
  const[userLastName,setUserLastName]= useState('')
@@ -36,6 +37,8 @@ function App() {
  }
  setUser(userData)
  setIsLoggedIn(true)
+ 
+ 
  
  }
  
