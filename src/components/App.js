@@ -1,11 +1,10 @@
-import logo from '../logo.svg';
 import '../App.css';
 import Header from './Header';
 import React,{useEffect, useState} from 'react';
 import ToDoList from './ToDoList';
-import { BrowserRouter, Route, Routes,Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import NavBar from './Navbar';
-import Journal from './Journal';
+import JournalList from './JournalList';
 import Profile from './Profile';
 
 
@@ -18,13 +17,23 @@ function App() {
  const[user,setUser]=useState({})
  const[ToDo,setToDo]=useState('')
  const[ToDos,setAddToDos]=useState([])
-//  const[DisplayToDos,setDisplayToDos] = useState(Todo)
+ const[journals,setJournals]=useState([])
+ const[newJournal,setNewJournal]=useState('')
 
  useEffect(()=>{
-  fetch('http://localhost:3000/todos')
+  fetch('https://sheltered-reaches-78983.herokuapp.com/todos')
   .then((res)=>res.json())
   .then((items)=>{
     setAddToDos(items)
+    
+  })
+ },[])
+
+ useEffect(()=>{
+  fetch('https://sheltered-reaches-78983.herokuapp.com/journals')
+  .then((res)=>res.json())
+  .then((items)=>{
+    setJournals(items)
     
   })
  },[])
@@ -62,7 +71,7 @@ function App() {
   const newToDo = {
     title:ToDo
   }
-  fetch('http://localhost:3000/todos',{
+  fetch('https://sheltered-reaches-78983.herokuapp.com/todos',{
     method:"POST",
     headers:{"content-Type":"application/json"},
     body:JSON.stringify(newToDo)
@@ -71,7 +80,33 @@ function App() {
  }
 
  function handleDeleteToDo(e){
-  fetch(`http://localhost:3000/todos/${e.target.value}`,{
+  fetch(`https://sheltered-reaches-78983.herokuapp.com/todos/${e.target.value}`,{
+    method:"DELETE"
+  })
+  .then((res)=>res.json())
+  .then()
+
+  e.target.parentNode.remove()
+ }
+
+ function JournalItem(e){
+  setNewJournal(e.target.value)
+ }
+
+ function handleAddJournal(){
+  const journalNew = {
+    title:newJournal
+  }
+  fetch('https://sheltered-reaches-78983.herokuapp.com/journals',{
+    method:"POST",
+    headers:{"content-Type":"application/json"},
+    body:JSON.stringify(journalNew)
+  })
+  setJournals([...journals,journalNew])
+ }
+
+ function handleDeleteJournal(e){
+  fetch(`https://sheltered-reaches-78983.herokuapp.com/journals/${e.target.value}`,{
     method:"DELETE"
   })
   .then((res)=>res.json())
@@ -97,7 +132,13 @@ function App() {
        handleDeleteToDo={handleDeleteToDo}
        />}/>
 
-      <Route path='/journal' element={<Journal user={user}/>}/>
+      <Route path='/journal' element={<JournalList 
+      user={user} 
+      journals={journals}
+      JournalItem={JournalItem}
+      handleAddJournal={handleAddJournal}
+      handleDeleteJournal={handleDeleteJournal}
+      />}/>
 
       <Route path='/' element={<Profile
       handleFirstName={handleFirstName}

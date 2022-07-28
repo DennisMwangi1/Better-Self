@@ -53,6 +53,7 @@ code {
    }
    .userInfoDark{
     margin-top: 100px;
+    color: rgba(255, 255, 255, 0.589);
     background-color: rgba(250, 255, 255, 0.178);
     display: flex;
     justify-content: space-around;
@@ -214,4 +215,29 @@ code {
     border-radius: 20px;
     font-size: 15px;
    }
+
+
+   .journalItem{
+    background-color: rgba(176, 169, 169, 0.894);
+    color: rgb(32, 53, 71);
+    width: 80%;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    word-wrap: break-word;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    
+   }
+   
+   .journalItem>button{
+    display: inline-block;
+    padding: 5px;
+    border: none;
+    background-color: rgba(84, 129, 169, 0.737);
+    color: white;
+    border-radius: 20px;
+    font-size: 13px;
+   }
+  
   
